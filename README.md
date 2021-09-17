@@ -4,7 +4,7 @@ Wordnet.py provides an interface to use WordNet for Python3.
 
 ## Requirements
 
-* WordNet in an sqlite3 database ([Japanese WordNet](http://compling.hss.ntu.edu.sg/wnja/data/1.1/wnjpn.db.gz))
+* WordNet in an sqlite3 database ([Japanese WordNet](http://compling.hss.ntu.edu.sg/wnja/index.en.html))
 
 
 ## Example
