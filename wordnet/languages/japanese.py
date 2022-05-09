@@ -53,11 +53,11 @@ class SynsetCollector(SynsetCollectorBase):
 
 
 def setup():
-    GZ_PATH = os.path.join(data_dir, 'japanese.db.gz')
-    DB_PATH = os.path.join(data_dir, 'japanese.db')
+    GZ_PATH = os.path.join(data_dir, 'wnjpn.db.gz')
+    DB_PATH = os.path.join(data_dir, 'wnjpn.db')
     URL = 'http://compling.hss.ntu.edu.sg/wnja/data/1.1/wnjpn.db.gz'
     if not os.path.exists(DB_PATH):
-        urllib.request.urlretrieve(URL, DB_PATH)
+        urllib.request.urlretrieve(URL, GZ_PATH)
         with gzip.open(GZ_PATH, 'rb') as gz_f, open(DB_PATH, 'wb') as db_f:
             db_f.write(gz_f.read())
     collector = SynsetCollector(DB_PATH)
