@@ -5,7 +5,7 @@ Wordnet.py provides an interface to use WordNet for Python3.
 ## Example
 
 ```python
-from wordnet.languages.japanese import setup
+from wordnet.languages.english import setup
 from wordnet.core import ExactMatchFilter, VagueMatchFilter
 
 wn = setup()
