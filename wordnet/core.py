@@ -136,9 +136,8 @@ class SynsetFilter(metaclass=ABCMeta):
                 result.append(synset)
         return result
 
-    @abstractmethod
     def _convert_to_query(self, pattern):
-        pass
+        return pattern
 
     @abstractmethod
     def _match(self, synset, query):
@@ -146,17 +145,11 @@ class SynsetFilter(metaclass=ABCMeta):
 
 
 class ExactMatchFilter(SynsetFilter):
-    def _convert_to_query(self, pattern):
-        return pattern
-
     def _match(self, synset, query):
         return query in synset.lemma
 
 
 class PartialMatchFilter(SynsetFilter):
-    def _convert_to_query(self, pattern):
-        return pattern
-
     def _match(self, synset, query):
         for lemma in synset.lemma:
             if query in lemma:
